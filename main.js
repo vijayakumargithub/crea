@@ -21,7 +21,8 @@ var exportUserInput = function(obj) {
     function getData() {
         rl.question("What station are you getting on the train?: ", function(startStation) {
             rl.question("What station are you getting off the train?: ", function(endStation) {
-                if(utilites.isSingleChar(startStation) && utilites.isSingleChar(endStation)) {
+                var checkSameChar = (startStation === endStation) ? true: false;
+                if(utilites.isSingleChar(startStation) && utilites.isSingleChar(endStation) && !checkSameChar) {
                     let rotuesList = new trainFrequency(obj);
                     rotuesList.checkTravelRoute(startStation.toUpperCase(), endStation.toUpperCase());
                     rl.close();

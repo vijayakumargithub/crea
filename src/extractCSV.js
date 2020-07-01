@@ -9,7 +9,7 @@ const { rejects } = require('assert');
   var argv = require('yargs').argv;
   var fileLocation = argv.filename;
   
-  function getFileDetail(fileLocation) {
+  function getFileDetail() {
   if(utilites.isNaN(fileLocation) == false || utilites.isNull(fileLocation) !== false || path.extname(fileLocation) !== '.csv' || utilites.isEmpty(fileLocation) === true) {
     console.log('System can not be recognise your file format please upload .CSV file');
     process.exit(0);
